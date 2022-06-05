@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wordle Unlimited</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Stint+Ultra+Condensed&display=swap" rel="stylesheet"> 
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Wordle Unlimited</h1>
+  </header>
+  <main>
+    <div class="game-container">
+      <div class="controls-container">
+        <button id="new-word" class="btn" data-default-text="&plus; New Word" data-pending-text="Loading...">
+          &plus; New Word
+        </button>
+      </div>
+
+      <div class="game-board-container hidden">
+        <div id="game-board" class="game-board">
+          <div class="game-row" data-row="1">
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+          </div>
+          <div class="game-row" data-row="2">
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+          </div>
+          <div class="game-row" data-row="3">
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+          </div>
+          <div class="game-row" data-row="4">
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+          </div>
+          <div class="game-row" data-row="5">
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+          </div>
+          <div class="game-row" data-row="6">
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+            <div class="game-tile"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="keyboard-container hidden">
+        <div id="keyboard" class="keyboard">
+          <div class="keyboard-row">
+            <div class="keyboard-key" data-type="letter" data-value="Q">Q</div>
+            <div class="keyboard-key" data-type="letter" data-value="W">W</div>
+            <div class="keyboard-key" data-type="letter" data-value="E">E</div>
+            <div class="keyboard-key" data-type="letter" data-value="R">R</div>
+            <div class="keyboard-key" data-type="letter" data-value="T">T</div>
+            <div class="keyboard-key" data-type="letter" data-value="Y">Y</div>
+            <div class="keyboard-key" data-type="letter" data-value="U">U</div>
+            <div class="keyboard-key" data-type="letter" data-value="I">I</div>
+            <div class="keyboard-key" data-type="letter" data-value="O">O</div>
+            <div class="keyboard-key" data-type="letter" data-value="P">P</div>
+          </div>
+          <div class="keyboard-row">
+            <div class="keyboard-key" data-type="letter" data-value="A">A</div>
+            <div class="keyboard-key" data-type="letter" data-value="S">S</div>
+            <div class="keyboard-key" data-type="letter" data-value="D">D</div>
+            <div class="keyboard-key" data-type="letter" data-value="F">F</div>
+            <div class="keyboard-key" data-type="letter" data-value="G">G</div>
+            <div class="keyboard-key" data-type="letter" data-value="H">H</div>
+            <div class="keyboard-key" data-type="letter" data-value="J">J</div>
+            <div class="keyboard-key" data-type="letter" data-value="K">K</div>
+            <div class="keyboard-key" data-type="letter" data-value="L">L</div>
+          </div>
+          <div class="keyboard-row">
+            <div class="keyboard-key" data-type="meta" data-value="enter">ENTER</div>
+            <div class="keyboard-key" data-type="letter" data-value="Z">Z</div>
+            <div class="keyboard-key" data-type="letter" data-value="X">X</div>
+            <div class="keyboard-key" data-type="letter" data-value="C">C</div>
+            <div class="keyboard-key" data-type="letter" data-value="V">V</div>
+            <div class="keyboard-key" data-type="letter" data-value="B">B</div>
+            <div class="keyboard-key" data-type="letter" data-value="N">N</div>
+            <div class="keyboard-key" data-type="letter" data-value="M">M</div>
+            <div class="keyboard-key" data-type="meta" data-value="delete">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                <path fill="currentColor" d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

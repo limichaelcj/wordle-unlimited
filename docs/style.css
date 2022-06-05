@@ -1,0 +1,204 @@
+:root {
+  --green: #6aaa64;
+  --yellow: #c9b458;
+  --gray-1: #787c7e;
+  --gray-2: #878a8c;
+  --gray-3: #d3d6da;
+  --gray-4: #edeff1;
+  
+  --text-color: black;
+  --text-color-invert: white;
+
+  --color-correct: var(--green);
+  --color-present: var(--yellow);
+  --color-absent: var(--gray-1);
+
+  --key-color: var(--gray-3);
+}
+
+html {
+  font-family: 'Raleway', -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+}
+
+body * {
+  box-sizing: inherit;
+}
+
+h1 {
+  font-family: 'Stint Ultra Condensed', serif;
+}
+
+header {
+  height: 4rem;
+  border-bottom: 1px solid var(--key-color);
+}
+
+header h1 {
+  line-height: 4rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+.game-container {
+  height: calc(100vh - 4rem);
+  width: 500px;
+  max-width: calc(100% - 1rem);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls-container {
+  flex: 0 0 auto;
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-board-container {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-board {
+  width: 350px;
+  height: 420px;
+  padding: 10px;
+  display: grid;
+  gap: 5px;
+  grid-template: repeat(6, 1fr) / repeat(5, 1fr);
+}
+
+.game-board .game-row {
+  display: contents;
+}
+
+.game-board .game-tile {
+  border: 2px solid var(--key-color);
+}
+
+.game-board .game-tile[data-state="tbd"] {
+  border-color: var(--gray-2);
+  background-color: white;
+  color: var(--text-color);
+}
+.game-board .game-tile[data-state="correct"] {
+  border-color: var(--color-correct);
+  background-color: var(--color-correct);
+  color: var(--text-color-invert);
+}
+.game-board .game-tile[data-state="present"] {
+  border-color: var(--color-present);
+  background-color: var(--color-present);
+  color: var(--text-color-invert);
+}
+.game-board .game-tile[data-state="absent"] {
+  border-color: var(--color-absent);
+  background-color: var(--color-absent);
+  color: var(--text-color-invert);
+}
+
+.keyboard-container {
+  flex: 0 0 auto;
+}
+
+.keyboard {
+  font-size: calc(1rem - 1px);
+  margin-bottom: 10px;
+  width: 100%;
+  display: grid;
+  gap: 6px;
+  grid-template: repeat(3, 1fr) / repeat(20, 1fr);
+}
+
+.keyboard-row {
+  display: contents;
+}
+
+.keyboard-row:nth-child(2) .keyboard-key:first-child {
+  grid-column: 2 / span 2;
+}
+
+.keyboard-key {
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  background-color: var(--key-color);
+  grid-column: span 2;
+  line-height: 3em;
+  padding: .5em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.keyboard-key[data-type="meta"] {
+  grid-column: span 3;
+}
+
+.keyboard-key svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.keyboard-key[data-state="correct"] {
+  background-color: var(--color-correct);
+  color: var(--text-color-invert);
+}
+.keyboard-key[data-state="present"] {
+  background-color: var(--color-present);
+  color: var(--text-color-invert);
+}
+.keyboard-key[data-state="absent"] {
+  background-color: var(--color-absent);
+  color: var(--text-color-invert);
+}
+
+.btn {
+  font-size: calc(1rem - 2px);
+  text-transform: uppercase;
+  padding: 0.7em 1.2em;
+  border-radius: 50px;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  color: var(--text-color);
+  background-color: var(--gray-4);
+}
+
+.btn:hover {
+  background-color: var(--gray-3);
+}
+
+.disabled {
+  opacity: 0.5 !important;
+  pointer-events: none !important;
+}
+
+.hidden {
+  display: none !important;
+}
