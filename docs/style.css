@@ -97,7 +97,18 @@ button {
 }
 
 .game-board .game-tile {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: bold;
   border: 2px solid var(--key-color);
+}
+
+.game-board .game-tile:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: attr(data-value);
 }
 
 .game-board .game-tile[data-state="tbd"] {
@@ -132,6 +143,7 @@ button {
   display: grid;
   gap: 6px;
   grid-template: repeat(3, 1fr) / repeat(20, 1fr);
+  user-select: none;
 }
 
 .keyboard-row {
@@ -154,7 +166,11 @@ button {
   cursor: pointer;
 }
 
-.keyboard-key[data-type="meta"] {
+.keyboard-key * {
+  pointer-events: none;
+}
+
+.keyboard-key.key-large {
   grid-column: span 3;
 }
 
